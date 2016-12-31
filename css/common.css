@@ -2,10 +2,29 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-x: hidden;
 }
+
 a{
   text-decoration: none;
 }
+
+#header{
+  position: absolute;
+width: 40%;
+height: 83vh;
+margin-left: 29%;
+margin-top: 17vh;
+}
+
+#header2{
+  position: absolute;
+width: 40%;
+height: 83vh;
+margin-left: 29%;
+margin-top: 17vh;
+}
+
 #nav-menu{
   cursor: pointer;
 }
@@ -438,6 +457,22 @@ input[type="submit"]{
 }
 
 @media (max-width: 1024px) {
+  #header{
+    position: absolute;
+    width: 46%;
+    height: 83vh;
+    margin-left: 24%;
+    margin-top: 17vh;
+  }
+
+  #header2{
+    position: absolute;
+    width: 46%;
+    height: 83vh;
+    margin-left: 24%;
+    margin-top: 17vh;
+  }
+
   .contact-header{
     text-align: center;
     width: 100%;
@@ -836,6 +871,25 @@ transition-delay: 1.2s;
 }
 }
 @media (max-width: 768px) {
+
+  #header{
+    position: absolute;
+    width: 58%;
+    height: 406px;
+    margin-left: 21%;
+    margin-top: 130px;
+    margin-right: 21%;
+
+  }
+
+  #header2{
+    position: absolute;
+    width: 58%;
+    height: 406px;
+    margin-left: 21%;
+    margin-top: 130px;
+    margin-right: 21%;
+  }
 .nav1{
 position: relative;
 width: 100%;
@@ -1228,6 +1282,24 @@ input[type="submit"]{
 }
 
 @media (max-width: 375px) {
+  #header{
+    position: absolute;
+    width: 80%;
+    height: 300px;
+    margin-left: 10%;
+    margin-top: 156px;
+
+  }
+
+  #header2{
+    position: absolute;
+    width: 80%;
+    height: 300px;
+    margin-left: 10%;
+    margin-top: 156px;
+
+  }
+
 .nav1{
 position: relative;
 width: 100%;

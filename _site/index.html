@@ -33,7 +33,10 @@
   </div>
 </div>
 
-        my portfolio content
+    <div id='header'>
+</div>
+<div id='header2'>
+</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js?ver=1.8.3"></script>
 <script src="https://cdn.liginc.co.jp/demo/2014/09/svg/js/jquery.lazylinepainter-1.4.1.min.js"></script>
@@ -281,6 +284,282 @@
   $('.nav4-block2').removeClass('nav4-click-block2');
   });
       })
+    </script>
+    <script type="text/javascript">
+    /*
+    * Lazy Line Painter
+    * SVG Stroke animation.
+    *
+    * https://github.com/camoconnell/lazy-line-painter
+    * http://www.camoconnell.com
+    *
+    * Copyright © 2013-2015 Cam O'Connell
+    * All rights reserved.
+    *
+    * Licensed under the GNU license.
+    *
+    */
+
+
+    /*
+    *
+    * TERMS OF USE - EASING EQUATIONS
+    *
+    * Open source under the BSD License.
+    *
+    * Copyright Â© 2001 Robert Penner
+    * All rights reserved.
+    *
+    * Redistribution and use in source and binary forms, with or without modification,
+    * are permitted provided that the following conditions are met:
+    *
+    * Redistributions of source code must retain the above copyright notice, this list of
+    * conditions and the following disclaimer.
+    * Redistributions in binary form must reproduce the above copyright notice, this list
+    * of conditions and the following disclaimer in the documentation and/or other materials
+    * provided with the distribution.
+    *
+    * Neither the name of the author nor the names of contributors may be used to endorse
+    * or promote products derived from this software without specific prior written permission.
+    *
+    * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY
+    * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+    * MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+    *  COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+    *  EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE
+    *  GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
+    * AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+    *  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED
+    * OF THE POSSIBILITY OF SUCH DAMAGE.
+    *
+    */
+
+    (function(h){var r={init:function(a){return this.each(function(){var c=h(this),b=c.data("lazyLinePainter");c.addClass("lazylinepainter");if(!b){var b=h.extend({strokeWidth:2,strokeDash:null,strokeColor:"#000",strokeOverColor:null,strokeCap:"round",strokeJoin:"round",strokeOpacity:1,onComplete:null,onUpdate:null,onStart:null,onStrokeStart:null,onStrokeComplete:null,delay:0,ease:null,overrideKey:null,drawSequential:!0,speedMultiplier:1,reverse:!1,paused:!1,progress:0,longestDuration:0,playhead:0},a),
+    d=b.overrideKey?b.overrideKey:c.attr("id").replace("#","");b.width=b.svgData[d].dimensions.width;b.height=b.svgData[d].dimensions.height;b.paths=h.extend(!0,[],b.svgData[d].strokepath);var d="0 0 "+b.width+" "+b.height,f=document.createElementNS("http://www.w3.org/2000/svg","svg");f.setAttributeNS(null,"viewBox",d);f.setAttribute("xmlns","http://www.w3.org/2000/svg");d=h(f);b.svg=d;for(var d=b.delay,e=b.paths,g=f=0;g<e.length;g++)f+=e[g].duration+(e[g].delay||0);for(var e=b.delay,g=b.paths,k=0,l=
+    0;l<g.length;l++){var m=g[l].delay||0;g[l].duration+m>k&&(k=g[l].duration+m)}b.totalDuration=b.drawSequential?d+f:e+k;d=b.reverse?b.totalDuration:0;for(f=0;f<b.paths.length;f++){e=b.paths[f];e.progress=0;e.index=f;var g=e,k=b,l=f,m=document.createElementNS("http://www.w3.org/2000/svg","path"),p=h(m);k.svg.append(p);p.attr(x(k,k.paths[l]));g.el=m;e.length=Math.ceil(e.el.getTotalLength());e.delay=e.delay||0;e.duration=e.duration;g=e;k=e.el;l=e.length;m=[];for(p=0;p<l;p++){var n=k.getPointAtLength(p);
+    m.push({x:n.x,y:n.y})}g.positions=m;e.ease=e.ease||null;g=e.el.style;k=b;l=e.length;m=void 0;m=e.strokeDash?t(e.strokeDash,l):k.strokeDash?t(k.strokeDash,l):l+" "+l;g.strokeDasharray=m;e.el.style.strokeDashoffset=e.length;e.el.style.display="block";e.el.getBoundingClientRect();e.onStrokeStart=e.onStrokeStart||null;e.onStrokeComplete=e.onStrokeComplete||null;e.onStrokeStartDone=!1;e.onStrokeCompleteDone=!1;e.onStrokeUpdate=e.onStrokeUpdate||null;k=e.duration/b.totalDuration;d=b.reverse?d-e.duration:
+    b.drawSequential?b.playhead+b.delay:e.delay+b.delay;g=d/b.totalDuration;e.startTime=d;e.startProgress=g;e.durationProgress=k;b.playhead+=e.duration+e.delay}b.totalDuration*=b.speedMultiplier;c.append(b.svg);c.data("lazyLinePainter",b);c.lazylinepainter("resize")}})},paint:function(){return this.each(function(){var a=h(this),c=a.data("lazyLinePainter");a.lazylinepainter("erase");c.rAF=requestAnimationFrame(function(a){q(a,c)});if(null!==c.onStart)c.onStart()})},pause:function(){return this.each(function(){var a=
+    h(this).data("lazyLinePainter");a.paused||(a.paused=!0,cancelAnimationFrame(a.rAF))})},resume:function(){return this.each(function(){var a=h(this).data("lazyLinePainter");a.paused&&(requestAnimationFrame(function(c){y(c,a)}),a.paused=!1)})},erase:function(){return this.each(function(){var a=h(this).data("lazyLinePainter");a.startTime=null;a.elapsedTime=null;cancelAnimationFrame(a.rAF);a.onStrokeCompleteDone=!1;a.paused=!1;for(var c=0;c<a.paths.length;c++){var b=a.paths[c];b.el.style.strokeDashoffset=
+    b.length;b.onStrokeCompleteDone=!1;b.onStrokeStartDone=!1}})},destroy:function(){return this.each(function(){var a=h(this);a.removeData("lazyLinePainter");a.empty();a.removeClass("lazylinepainter")})},set:function(a){return this.each(function(){var c=h(this).data("lazyLinePainter");c.progress=a;u(c)})},get:function(){return h(this).data("lazyLinePainter")},resize:function(){this.each(function(){var a=h(this),c=a.data("lazyLinePainter");c.offset=a.offset();for(a=0;a<c.paths.length;a++)v(c,c.paths[a])})}},
+    y=function(a,c){c.startTime=a-c.elapsedTime;requestAnimationFrame(function(a){q(a,c)})},q=function(a,c){c.startTime||(c.startTime=a);if(null!==c.onUpdate)c.onUpdate();c.elapsedTime=a-c.startTime;c.progress=w(c.totalDuration,c.startTime,c.elapsedTime,c.ease);u(c);if(1>c.progress)c.rAF=requestAnimationFrame(function(a){q(a,c)});else if(null!==c.onComplete)c.onComplete()},u=function(a){for(var c=0;c<a.paths.length;c++){var b=a.paths[c],d=void 0;a.progress>b.startProgress&&a.progress<b.startProgress+
+    b.durationProgress?d=(a.progress-b.startProgress)/b.durationProgress:a.progress>=b.startProgress+b.durationProgress?d=1:a.progress<=b.startProgress&&(d=0);b.progress=w(1,0,d,b.ease);var d=b,f=d.progress*d.length;d.el.style.strokeDashoffset=a.reverse||d.reverse?-d.length+f:d.length-f;v(a,b);d=a;if(1===b.progress)d.onStrokeComplete&&!b.onStrokeCompleteDone&&(d.onStrokeComplete(b),b.onStrokeComplete||(b.onStrokeCompleteDone=!0)),b.onStrokeComplete&&!b.onStrokeCompleteDone&&(b.onStrokeComplete(b),b.onStrokeCompleteDone=
+    !0);else if(1E-5<b.progress&&(d.onStrokeStart&&!b.onStrokeStartDone&&(d.onStrokeStart(b),b.onStrokeStart||(b.onStrokeStartDone=!0)),b.onStrokeStart&&!b.onStrokeStartDone&&(b.onStrokeStart(b),b.onStrokeStartDone=!0),b.onStrokeUpdate))b.onStrokeUpdate(b)}},w=function(a,c,b,d){var f;0<b&&b<a?f=d?n[d](b,0,1,a):b/a:b>=a?f=1:b<=c&&(f=0);return f},v=function(a,c){var b=Math.round(c.progress*(c.length-1)),b=c.positions[b];c.position={x:a.offset.left+b.x,y:a.offset.top+b.y}},x=function(a,c){return{d:c.path,
+    stroke:c.strokeColor?c.strokeColor:a.strokeColor,"fill-opacity":0,"stroke-opacity":c.strokeOpacity?c.strokeOpacity:a.strokeOpacity,"stroke-width":c.strokeWidth?c.strokeWidth:a.strokeWidth,"stroke-linecap":c.strokeCap?c.strokeCap:a.strokeCap,"stroke-linejoin":c.strokeJoin?c.strokeJoin:a.strokeJoin}},t=function(a,c){for(var b="",d=a.split(","),f=0,e=d.length-1;0<=e;e--)f+=Number(d[e]);d=Math.floor(c/f);for(e=d-1;0<=e;e--)b+=a+", ";return(b+(c-d*f)+", "+c).split(",").join("px,")+"px"};h.fn.lazylinepainter=
+    function(a){if(r[a])return r[a].apply(this,Array.prototype.slice.call(arguments,1));if("object"!==typeof a&&a)console.log("opps - issue finding method");else return r.init.apply(this,arguments)};var n={easeLinear:function(a,c,b,d){return b*a/d+c},easeInQuad:function(a,c,b,d){return b*(a/=d)*a+c},easeOutQuad:function(a,c,b,d){return-b*(a/=d)*(a-2)+c},easeInOutQuad:function(a,c,b,d){return 1>(a/=d/2)?b/2*a*a+c:-b/2*(--a*(a-2)-1)+c},easeInCubic:function(a,c,b,d){return b*(a/=d)*a*a+c},easeOutCubic:function(a,
+    c,b,d){return b*((a=a/d-1)*a*a+1)+c},easeInOutCubic:function(a,c,b,d){return 1>(a/=d/2)?b/2*a*a*a+c:b/2*((a-=2)*a*a+2)+c},easeInQuart:function(a,c,b,d){return b*(a/=d)*a*a*a+c},easeOutQuart:function(a,c,b,d){return-b*((a=a/d-1)*a*a*a-1)+c},easeInOutQuart:function(a,c,b,d){return 1>(a/=d/2)?b/2*a*a*a*a+c:-b/2*((a-=2)*a*a*a-2)+c},easeInQuint:function(a,c,b,d){return b*(a/=d)*a*a*a*a+c},easeOutQuint:function(a,c,b,d){return b*((a=a/d-1)*a*a*a*a+1)+c},easeInOutQuint:function(a,c,b,d){return 1>(a/=d/2)?
+    b/2*a*a*a*a*a+c:b/2*((a-=2)*a*a*a*a+2)+c},easeInSine:function(a,c,b,d){return-b*Math.cos(a/d*(Math.PI/2))+b+c},easeOutSine:function(a,c,b,d){return b*Math.sin(a/d*(Math.PI/2))+c},easeInOutSine:function(a,c,b,d){return-b/2*(Math.cos(Math.PI*a/d)-1)+c},easeInExpo:function(a,c,b,d){return 0==a?c:b*Math.pow(2,10*(a/d-1))+c},easeOutExpo:function(a,c,b,d){return a==d?c+b:b*(-Math.pow(2,-10*a/d)+1)+c},easeInOutExpo:function(a,c,b,d){return 0==a?c:a==d?c+b:1>(a/=d/2)?b/2*Math.pow(2,10*(a-1))+c:b/2*(-Math.pow(2,
+    -10*--a)+2)+c},easeInCirc:function(a,c,b,d){return-b*(Math.sqrt(1-(a/=d)*a)-1)+c},easeOutCirc:function(a,c,b,d){return b*Math.sqrt(1-(a=a/d-1)*a)+c},easeInOutCirc:function(a,c,b,d){return 1>(a/=d/2)?-b/2*(Math.sqrt(1-a*a)-1)+c:b/2*(Math.sqrt(1-(a-=2)*a)+1)+c},easeInElastic:function(a,c,b,d){var f=1.70158,e=0,g=b;if(0==a)return c;if(1==(a/=d))return c+b;e||(e=.3*d);g<Math.abs(b)?(g=b,f=e/4):f=e/(2*Math.PI)*Math.asin(b/g);return-(g*Math.pow(2,10*--a)*Math.sin(2*(a*d-f)*Math.PI/e))+c},easeOutElastic:function(a,
+    c,b,d){var f=1.70158,e=0,g=b;if(0==a)return c;if(1==(a/=d))return c+b;e||(e=.3*d);g<Math.abs(b)?(g=b,f=e/4):f=e/(2*Math.PI)*Math.asin(b/g);return g*Math.pow(2,-10*a)*Math.sin(2*(a*d-f)*Math.PI/e)+b+c},easeInOutElastic:function(a,c,b,d){var f=1.70158,e=0,g=b;if(0==a)return c;if(2==(a/=d/2))return c+b;e||(e=.3*d*1.5);g<Math.abs(b)?(g=b,f=e/4):f=e/(2*Math.PI)*Math.asin(b/g);return 1>a?-.5*g*Math.pow(2,10*--a)*Math.sin(2*(a*d-f)*Math.PI/e)+c:g*Math.pow(2,-10*--a)*Math.sin(2*(a*d-f)*Math.PI/e)*.5+b+c},
+    easeInBack:function(a,c,b,d,f){void 0==f&&(f=1.70158);return b*(a/=d)*a*((f+1)*a-f)+c},easeOutBack:function(a,c,b,d,f){void 0==f&&(f=1.70158);return b*((a=a/d-1)*a*((f+1)*a+f)+1)+c},easeInOutBack:function(a,c,b,d,f){void 0==f&&(f=1.70158);return 1>(a/=d/2)?b/2*a*a*(((f*=1.525)+1)*a-f)+c:b/2*((a-=2)*a*(((f*=1.525)+1)*a+f)+2)+c},easeInBounce:function(a,c,b,d){return b-n.easeOutBounce(d-a,0,b,d)+c},easeOutBounce:function(a,c,b,d){return(a/=d)<1/2.75?7.5625*b*a*a+c:a<2/2.75?b*(7.5625*(a-=1.5/2.75)*a+
+    .75)+c:a<2.5/2.75?b*(7.5625*(a-=2.25/2.75)*a+.9375)+c:b*(7.5625*(a-=2.625/2.75)*a+.984375)+c},easeInOutBounce:function(a,c,b,d){return a<d/2?.5*n.easeInBounce(2*a,0,b,d)+c:.5*n.easeOutBounce(2*a-d,0,b,d)+.5*b+c}}})(jQuery);
+
+    var pathObj11 = {
+  "header": {
+      "strokepath": [
+          {
+              "path": "  M197.97,22.266c0,0-30.324,6.274-67.968,86.266c-37.643,79.991-47.577,109.792-62.739,145.344  c-15.162,35.552-24.573,67.968-33.461,65.876c-8.888-2.092-3.137-0.523-14.116-3.66",
+              "duration": 500
+          },
+          {
+              "path": "  M51.055,22.266c0,0-18.299,14.118-14.116,33.985S42.524,99,96.785,182.221",
+              "duration": 600
+          },
+          {
+              "path": "  M135.558,120.164c0,0-22.742,70.188,0.98,67.051c23.723-3.137,23.526-18.822,34.113-69.992c0-4.901-18.232,66.866-5.881,64.998  s6.078-65.782,31.76-67.743c24.488-2.975,12.744,23.526,0,74.305c-11.879,47.334-12.652,105.664-12.939,108.811  c-0.445,4.906-3.131,49.845-15.525,55.289c-9.373,4.117-27.096-0.406-31.527-26.469c-4.902-28.82,0.195-44.308,12.352-66.07  c12.155-21.763,35.895-39.954,53.523-70.777c10.586-18.511,27.252-79.403,37.447-83.324c10.193-3.921,14.199-0.156,15.992,2.94  c2.156,3.725-1.287,47.707,1.176,51.955c0.793,1.124,2.549,8.039,4.314,9.019c1.764,0.98,11.764,2.941,12.939-29.604  s0.393-24.115,0-38.035c-0.393-13.92-0.588,59.405-1.766,65.875c-1.176,6.47,1.178-62.521,18.039-67.628  c7.057-1.187,8.234,19.203,7.449,30.182c-0.785,10.979,3.137-34.31,19.018-35.094s4.312,30.192,2.941,42.348  c-1.373,12.155-1.848,27.285,5.35,25.014s8.373-7.761,8.57-12.074",
+              "duration": 8800
+          },
+          {
+              "path": "  M174.679,153.643c0,0-6.641,29.259,10.742,27.69c17.385-1.568,18.959-22.263,19.521-24.445",
+              "duration": 600
+          },
+          {
+              "path": "  M222.021,140.48c0,0-7.471,33.925,12.266,33.795c19.736-0.13,21.844-27.561,21.885-32.142",
+              "duration": 600
+          },
+          {
+              "path": "  M197.97,22.266c0,0-30.324,6.274-67.967,86.266c-37.643,79.991-47.578,109.792-62.74,145.344s-24.573,67.968-33.461,65.876  c-8.888-2.092-3.137-0.523-14.116-3.66",
+              "duration": 600
+          },
+          {
+              "path": "  M51.055,22.266c0,0-18.299,14.118-14.116,33.986C41.122,76.119,42.525,99,96.785,182.221",
+              "duration": 600
+          },
+          {
+              "path": "  M135.558,120.164c0,0-22.742,70.188,0.98,67.051c23.723-3.137,23.527-18.822,34.115-69.992c0-4.901-18.234,66.866-5.883,64.998  s6.078-65.782,31.762-67.743c24.486-2.975,12.744,23.526,0,74.305c-11.881,47.334-12.654,105.664-12.939,108.811  c-0.447,4.906-3.133,49.845-15.525,55.289c-9.375,4.117-27.097-0.406-31.529-26.469c-4.9-28.82,0.197-44.308,12.352-66.07  c12.156-21.763,35.896-39.954,53.523-70.777c10.588-18.51,27.252-79.403,37.447-83.324c10.195-3.921,14.201-0.156,15.992,2.94  c2.156,3.725-1.287,47.706,1.176,51.955c0.793,1.124,2.549,8.039,4.314,9.019c1.764,0.98,11.764,2.941,12.939-29.604  s0.393-24.115,0-38.035c-0.393-13.92-0.588,59.405-1.766,65.875c-1.176,6.47,1.178-62.521,18.039-67.628  c7.057-1.187,8.234,19.203,7.449,30.182c-0.785,10.979,3.137-34.31,19.018-35.094s4.312,30.192,2.941,42.348  c-1.373,12.155-1.848,27.285,5.35,25.014c7.197-2.271,8.373-7.761,8.57-12.075",
+              "duration": 1800
+          },
+          {
+              "path": "  M174.679,153.643c0,0-6.641,29.258,10.744,27.69c17.383-1.568,18.957-22.263,19.52-24.445",
+              "duration": 600
+          },
+          {
+              "path": "  M222.021,140.48c0,0-7.471,33.925,12.266,33.795c19.738-0.13,21.844-27.561,21.885-32.143",
+              "duration": 600
+          },
+          {
+              "path": "  M253.844,242.301c0,0-4.841,175.476-12.586,181.658",
+              "duration": 600
+          },
+          {
+              "path": "  M214.633,239.447c0,0,54.7-57.065,84.231-32.812c29.527,24.252,30.011,70.317,7.259,121.943  c-22.75,51.63-66.803,94.125-97.782,138.18c-30.983,44.052-13.556,28.056-12.586,27.104",
+              "duration": 600
+          },
+          {
+              "path": "  M346.787,203.307c0,0-10.017,145.215-15.866,154.075c-6.279,9.513,5.7-58.017,21.676-59.917c15.974-1.903-7.745,60.393,3.874,56.112  c11.616-4.28,22.396-46.188,21.784-61.107c-0.608-14.741-13.537,52.767,8.832,52.298c22.146-0.464,17.927-41.569,18.273-56.338  c0.363-15.337-11.858,54.447,7.021,53.021c20.813-1.572,11.632-47.205,11.376-57.778c-0.243-9.968-2.444,53.734-1.577,56.149  c2.283,6.354,5.829-44.668,10.169-50.683c8.214-11.374,21.421-13.551,20.938-9.984c-0.485,3.567-13.556,58.492-2.178,56.59  c11.374-1.902,22.826-59.661,23.478-66.313c0.666-6.802-11.481,56.342,8.955,55.612c19.969-0.711,20.613-48.539,20.331-62.296  c-0.24-11.695-22.749,131.943-24.204,144.092c-1.451,12.126-8.686,62.707-18.88,71.806c-5.768,5.15-14.197,13.608-25.495-3.659  c-7.586-11.596-9.115-44.846,10.489-73.614c19.606-28.772,66.864-66.163,76.486-103.432c9.771-37.854,7.081-32.862,11.254-41.552  c3.582-7.459,20.333-8.382,13.191,31.802c-5.882,33.094,11.47,21.348,12.225,20.626c1.224-1.173,8.53-10.698,5.082-17.297",
+              "duration": 1800
+          },
+          {
+              "path": "  M522.269,297.94c0,0-3.877,17.831,8.952,15.217c12.829-2.615,17.055-28.32,16.736-33.543",
+              "duration": 600
+          },
+          {
+              "path": "  M445.057,256.568c0,0,0,7.607,6.537,7.607c6.533,0,6.737-7.592,6.049-9.986c-0.65-2.266-7.984-8.084-12.586,0",
+              "duration": 600
+          },
+          {
+              "path": "  M253.116,242.301c0,0-4.841,175.476-12.584,181.658",
+              "duration": 600
+          },
+          {
+              "path": "  M213.907,239.447c0,0,54.701-57.065,84.229-32.812c29.529,24.252,30.015,70.317,7.263,121.943  c-22.753,51.63-66.805,94.125-97.785,138.18c-30.981,44.052-13.556,28.056-12.587,27.104",
+              "duration": 600
+          },
+          {
+              "path": "  M346.061,203.307c0,0-10.017,145.215-15.866,154.075c-6.28,9.513,5.701-58.017,21.676-59.917  c15.976-1.903-7.744,60.393,3.873,56.112s22.398-46.188,21.783-61.107c-0.605-14.741-13.534,52.767,8.834,52.298  c22.147-0.464,17.927-41.569,18.276-56.338c0.361-15.337-11.861,54.447,7.018,53.021c20.813-1.572,11.634-47.205,11.377-57.778  c-0.242-9.968-2.442,53.734-1.576,56.149c2.282,6.354,5.827-44.668,10.167-50.683c8.215-11.374,21.422-13.551,20.938-9.984  c-0.484,3.567-13.555,58.492-2.179,56.59c11.375-1.902,22.826-59.661,23.478-66.313c0.666-6.802-11.479,56.342,8.955,55.612  c19.971-0.711,20.612-48.539,20.333-62.296c-0.24-11.695-22.748,131.943-24.205,144.092c-1.454,12.126-8.685,62.707-18.879,71.806  c-5.77,5.15-14.197,13.608-25.497-3.659c-7.586-11.596-9.113-44.846,10.489-73.614c19.605-28.772,66.865-66.163,76.486-103.432  c9.771-37.854,7.081-32.862,11.255-41.552c3.583-7.459,20.332-8.382,13.19,31.802c-5.881,33.094,11.471,21.348,12.224,20.626  c1.226-1.173,8.533-10.698,5.082-17.297",
+              "duration": 1800
+          },
+          {
+              "path": "  M521.542,297.94c0,0-3.874,17.831,8.954,15.217c12.827-2.615,17.053-28.32,16.733-33.543",
+              "duration": 6000
+          },
+          {
+              "path": "  M444.332,256.568c0,0,0,7.607,6.534,7.607c6.536,0,6.737-7.592,6.05-9.986c-0.649-2.266-7.985-8.084-12.584,0",
+              "duration": 600
+          }
+      ],
+      "dimensions": {
+          "width": 586,
+          "height": 515
+      }
+  }
+};
+var pathObj12 = {
+"header2": {
+  "strokepath": [
+      {
+          "path": "  M197.97,22.266c0,0-30.324,6.274-67.968,86.266c-37.643,79.991-47.577,109.792-62.739,145.344  c-15.162,35.552-24.573,67.968-33.461,65.876c-8.888-2.092-3.137-0.523-14.116-3.66",
+          "duration": 530
+      },
+      {
+          "path": "  M51.055,22.266c0,0-18.299,14.118-14.116,33.985S42.524,99,96.785,182.221",
+          "duration": 600
+      },
+      {
+          "path": "  M135.558,120.164c0,0-22.742,70.188,0.98,67.051c23.723-3.137,23.526-18.822,34.113-69.992c0-4.901-18.232,66.866-5.881,64.998  s6.078-65.782,31.76-67.743c24.488-2.975,12.744,23.526,0,74.305c-11.879,47.334-12.652,105.664-12.939,108.811  c-0.445,4.906-3.131,49.845-15.525,55.289c-9.373,4.117-27.096-0.406-31.527-26.469c-4.902-28.82,0.195-44.308,12.352-66.07  c12.155-21.763,35.895-39.954,53.523-70.777c10.586-18.511,27.252-79.403,37.447-83.324c10.193-3.921,14.199-0.156,15.992,2.94  c2.156,3.725-1.287,47.707,1.176,51.955c0.793,1.124,2.549,8.039,4.314,9.019c1.764,0.98,11.764,2.941,12.939-29.604  s0.393-24.115,0-38.035c-0.393-13.92-0.588,59.405-1.766,65.875c-1.176,6.47,1.178-62.521,18.039-67.628  c7.057-1.187,8.234,19.203,7.449,30.182c-0.785,10.979,3.137-34.31,19.018-35.094s4.312,30.192,2.941,42.348  c-1.373,12.155-1.848,27.285,5.35,25.014s8.373-7.761,8.57-12.074",
+          "duration": 9000
+      },
+      {
+          "path": "  M174.679,153.643c0,0-6.641,29.259,10.742,27.69c17.385-1.568,18.959-22.263,19.521-24.445",
+          "duration": 600
+      },
+      {
+          "path": "  M222.021,140.48c0,0-7.471,33.925,12.266,33.795c19.736-0.13,21.844-27.561,21.885-32.142",
+          "duration": 600
+      },
+      {
+          "path": "  M197.97,22.266c0,0-30.324,6.274-67.967,86.266c-37.643,79.991-47.578,109.792-62.74,145.344s-24.573,67.968-33.461,65.876  c-8.888-2.092-3.137-0.523-14.116-3.66",
+          "duration": 600
+      },
+      {
+          "path": "  M51.055,22.266c0,0-18.299,14.118-14.116,33.986C41.122,76.119,42.525,99,96.785,182.221",
+          "duration": 600
+      },
+      {
+          "path": "  M135.558,120.164c0,0-22.742,70.188,0.98,67.051c23.723-3.137,23.527-18.822,34.115-69.992c0-4.901-18.234,66.866-5.883,64.998  s6.078-65.782,31.762-67.743c24.486-2.975,12.744,23.526,0,74.305c-11.881,47.334-12.654,105.664-12.939,108.811  c-0.447,4.906-3.133,49.845-15.525,55.289c-9.375,4.117-27.097-0.406-31.529-26.469c-4.9-28.82,0.197-44.308,12.352-66.07  c12.156-21.763,35.896-39.954,53.523-70.777c10.588-18.51,27.252-79.403,37.447-83.324c10.195-3.921,14.201-0.156,15.992,2.94  c2.156,3.725-1.287,47.706,1.176,51.955c0.793,1.124,2.549,8.039,4.314,9.019c1.764,0.98,11.764,2.941,12.939-29.604  s0.393-24.115,0-38.035c-0.393-13.92-0.588,59.405-1.766,65.875c-1.176,6.47,1.178-62.521,18.039-67.628  c7.057-1.187,8.234,19.203,7.449,30.182c-0.785,10.979,3.137-34.31,19.018-35.094s4.312,30.192,2.941,42.348  c-1.373,12.155-1.848,27.285,5.35,25.014c7.197-2.271,8.373-7.761,8.57-12.075",
+          "duration": 1800
+      },
+      {
+          "path": "  M174.679,153.643c0,0-6.641,29.258,10.744,27.69c17.383-1.568,18.957-22.263,19.52-24.445",
+          "duration": 600
+      },
+      {
+          "path": "  M222.021,140.48c0,0-7.471,33.925,12.266,33.795c19.738-0.13,21.844-27.561,21.885-32.143",
+          "duration": 600
+      },
+      {
+          "path": "  M253.844,242.301c0,0-4.841,175.476-12.586,181.658",
+          "duration": 600
+      },
+      {
+          "path": "  M214.633,239.447c0,0,54.7-57.065,84.231-32.812c29.527,24.252,30.011,70.317,7.259,121.943  c-22.75,51.63-66.803,94.125-97.782,138.18c-30.983,44.052-13.556,28.056-12.586,27.104",
+          "duration": 600
+      },
+      {
+          "path": "  M346.787,203.307c0,0-10.017,145.215-15.866,154.075c-6.279,9.513,5.7-58.017,21.676-59.917c15.974-1.903-7.745,60.393,3.874,56.112  c11.616-4.28,22.396-46.188,21.784-61.107c-0.608-14.741-13.537,52.767,8.832,52.298c22.146-0.464,17.927-41.569,18.273-56.338  c0.363-15.337-11.858,54.447,7.021,53.021c20.813-1.572,11.632-47.205,11.376-57.778c-0.243-9.968-2.444,53.734-1.577,56.149  c2.283,6.354,5.829-44.668,10.169-50.683c8.214-11.374,21.421-13.551,20.938-9.984c-0.485,3.567-13.556,58.492-2.178,56.59  c11.374-1.902,22.826-59.661,23.478-66.313c0.666-6.802-11.481,56.342,8.955,55.612c19.969-0.711,20.613-48.539,20.331-62.296  c-0.24-11.695-22.749,131.943-24.204,144.092c-1.451,12.126-8.686,62.707-18.88,71.806c-5.768,5.15-14.197,13.608-25.495-3.659  c-7.586-11.596-9.115-44.846,10.489-73.614c19.606-28.772,66.864-66.163,76.486-103.432c9.771-37.854,7.081-32.862,11.254-41.552  c3.582-7.459,20.333-8.382,13.191,31.802c-5.882,33.094,11.47,21.348,12.225,20.626c1.224-1.173,8.53-10.698,5.082-17.297",
+          "duration": 1800
+      },
+      {
+          "path": "  M522.269,297.94c0,0-3.877,17.831,8.952,15.217c12.829-2.615,17.055-28.32,16.736-33.543",
+          "duration": 600
+      },
+      {
+          "path": "  M445.057,256.568c0,0,0,7.607,6.537,7.607c6.533,0,6.737-7.592,6.049-9.986c-0.65-2.266-7.984-8.084-12.586,0",
+          "duration": 600
+      },
+      {
+          "path": "  M253.116,242.301c0,0-4.841,175.476-12.584,181.658",
+          "duration": 600
+      },
+      {
+          "path": "  M213.907,239.447c0,0,54.701-57.065,84.229-32.812c29.529,24.252,30.015,70.317,7.263,121.943  c-22.753,51.63-66.805,94.125-97.785,138.18c-30.981,44.052-13.556,28.056-12.587,27.104",
+          "duration": 600
+      },
+      {
+          "path": "  M346.061,203.307c0,0-10.017,145.215-15.866,154.075c-6.28,9.513,5.701-58.017,21.676-59.917  c15.976-1.903-7.744,60.393,3.873,56.112s22.398-46.188,21.783-61.107c-0.605-14.741-13.534,52.767,8.834,52.298  c22.147-0.464,17.927-41.569,18.276-56.338c0.361-15.337-11.861,54.447,7.018,53.021c20.813-1.572,11.634-47.205,11.377-57.778  c-0.242-9.968-2.442,53.734-1.576,56.149c2.282,6.354,5.827-44.668,10.167-50.683c8.215-11.374,21.422-13.551,20.938-9.984  c-0.484,3.567-13.555,58.492-2.179,56.59c11.375-1.902,22.826-59.661,23.478-66.313c0.666-6.802-11.479,56.342,8.955,55.612  c19.971-0.711,20.612-48.539,20.333-62.296c-0.24-11.695-22.748,131.943-24.205,144.092c-1.454,12.126-8.685,62.707-18.879,71.806  c-5.77,5.15-14.197,13.608-25.497-3.659c-7.586-11.596-9.113-44.846,10.489-73.614c19.605-28.772,66.865-66.163,76.486-103.432  c9.771-37.854,7.081-32.862,11.255-41.552c3.583-7.459,20.332-8.382,13.19,31.802c-5.881,33.094,11.471,21.348,12.224,20.626  c1.226-1.173,8.533-10.698,5.082-17.297",
+          "duration": 1800
+      },
+      {
+          "path": "  M521.542,297.94c0,0-3.874,17.831,8.954,15.217c12.827-2.615,17.053-28.32,16.733-33.543",
+          "duration": 600
+      },
+      {
+          "path": "  M444.332,256.568c0,0,0,7.607,6.534,7.607c6.536,0,6.737-7.592,6.05-9.986c-0.649-2.266-7.985-8.084-12.584,0",
+          "duration": 600
+      }
+  ],
+  "dimensions": {
+      "width": 586,
+      "height": 515
+  }
+}
+};
+
+/*
+Setup and Paint your lazyline!
+*/
+
+$(document).ready(function(){
+$('#header').lazylinepainter(
+{
+  "svgData": pathObj11,
+  "strokeWidth": 39,
+  "strokeColor": "#000",
+  'drawSequential' :false,
+  'ease': 'easeInOutExpo',
+  'delay':100
+}).lazylinepainter('paint');
+
+$('#header2').lazylinepainter(
+{
+  "svgData": pathObj12,
+  "strokeWidth": 10,
+  "strokeColor": "#fff",
+  'drawSequential' :false,
+  'ease': 'easeInOutExpo',
+  'delay':100
+
+}).lazylinepainter('paint');
+});
     </script>
   </body>
 </html>
