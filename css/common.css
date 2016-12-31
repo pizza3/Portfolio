@@ -310,7 +310,254 @@ a{
 
 }
 
+.contact-header{
+  text-align: center;
+  width: 100%;
+  height: 18vh;
+  position: relative;
+  font-size: 73px;
+  font-family: 'Anton', sans-serif;
+  color: #0A0A0B;
+}
+
+.contact-form {
+  float: left;
+  width: 50%;
+  height: 80vh;
+  padding-top: 3%;
+  padding-left: 10%;
+}
+
+input[type="text"]{
+  width: 87%;
+  height: 40px;
+  border-style: solid;
+  border-color: #000;
+  border-width: 2px;
+  padding-left: 14px;
+}
+
+input[type="email"]{
+  width: 87%;
+  height: 40px;
+  border-style: solid;
+  border-color: #000;
+  border-width: 2px;
+  padding-left: 14px;
+  margin-top: 20px;
+}
+
+.textarea{
+  width: 87%;
+  height: 160px;
+  border-style: solid;
+  border-color: #000;
+  border-width: 2px;
+  padding-left: 14px;
+  margin-top: 20px;
+
+}
+
+.send-button{
+  width: 87%;
+  position: relative;
+  height: 40px;
+  overflow: hidden;
+  margin-top: 25px;
+  cursor: pointer;
+}
+
+
+input[type="submit"]{
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  background-color: #FF0065;
+  border: none;
+  font-family: 'Anton', sans-serif;
+  color: #0A0A0B;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.send-overlay{
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  overflow: hidden;
+  background-color: #000;
+  font-family: 'Anton', sans-serif;
+  transition: .3s;
+  color: #95989A;
+  font-size: 30px;
+}
+
+.contact-card{
+  float: left;
+  width: 34%;
+  height: 51vh;
+  margin: 0;
+  margin-top: 3%;
+  background-color: #0A0A0B;
+  margin-left: 3%;
+}
+
+.info1{
+  width: 100%;
+  height: 25%;
+}
+
+.info2{
+  width: 100%;
+  height: 25%;
+  font-family: 'Anton', sans-serif;
+  color: #F0F0F0;
+  font-size: 75px;
+  overflow:hidden;
+}
+
+.info3{
+  width: 100%;
+  height: 25%;
+  font-family: 'Anton', sans-serif;
+  color: #F0F0F0;
+  font-size: 75px;
+  overflow:hidden;
+}
+
+.info4{
+  width: 100%;
+  height: 25%;
+  font-family: 'Anton', sans-serif;
+  color: #F0F0F0;
+  font-size: 75px;
+  overflow:hidden;
+}
+
 @media (max-width: 1024px) {
+  .contact-header{
+    text-align: center;
+    width: 100%;
+    height: 18vh;
+    position: relative;
+    font-size: 73px;
+    font-family: 'Anton', sans-serif;
+    color: #0A0A0B;
+  }
+
+  .contact-form {
+    float: left;
+    width: 50%;
+    height: 80vh;
+    padding-top: 3%;
+    padding-left: 10%;
+  }
+
+  input[type="text"]{
+    width: 87%;
+    height: 40px;
+    border-style: solid;
+    border-color: #000;
+    border-width: 2px;
+    padding-left: 14px;
+  }
+
+  input[type="email"]{
+    width: 87%;
+    height: 40px;
+    border-style: solid;
+    border-color: #000;
+    border-width: 2px;
+    padding-left: 14px;
+    margin-top: 20px;
+  }
+
+  .textarea{
+    width: 87%;
+    height: 160px;
+    border-style: solid;
+    border-color: #000;
+    border-width: 2px;
+    padding-left: 14px;
+    margin-top: 20px;
+
+  }
+
+  .send-button{
+    width: 87%;
+    position: relative;
+    height: 40px;
+    overflow: hidden;
+    margin-top: 25px;
+  }
+
+
+  input[type="submit"]{
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    background-color: #FF0065;
+    border: none;
+    font-family: 'Anton', sans-serif;
+    color: #0A0A0B;
+    font-size: 30px;
+  }
+
+  .send-overlay{
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+    background-color: #000;
+    font-family: 'Anton', sans-serif;
+    color: #95989A;
+    font-size: 30px;
+  }
+
+  .contact-card{
+    float: left;
+    width: 37%;
+    height: 59vh;
+    margin: 0;
+    margin-top: 3%;
+    background-color: #0A0A0B;
+    margin-left: 3%;
+  }
+
+  .info1{
+    width: 100%;
+    height: 25%;
+  }
+
+  .info2{
+    width: 100%;
+    height: 25%;
+    font-family: 'Anton', sans-serif;
+    color: #F0F0F0;
+    font-size: 75px;
+    overflow:hidden;
+  }
+
+  .info3{
+    width: 100%;
+    height: 25%;
+    font-family: 'Anton', sans-serif;
+    color: #F0F0F0;
+    font-size: 75px;
+    overflow:hidden;
+  }
+
+  .info4{
+    width: 100%;
+    height: 25%;
+    font-family: 'Anton', sans-serif;
+    color: #F0F0F0;
+    font-size: 75px;
+    overflow:hidden;
+  }
+
 #nav-menu{
 position: fixed;
 z-index: 20;
@@ -851,6 +1098,131 @@ margin-left: 100%;
 transition-delay: 1.2s;
 
 }
+.contact-header{
+  text-align: center;
+  width: 100%;
+  height: 18vh;
+  position: relative;
+  font-size: 73px;
+  font-family: 'Anton', sans-serif;
+  color: #0A0A0B;
+}
+
+.contact-form{
+  position: none;
+  margin-left:0%;
+  width: 100%;
+  height: 70vh;
+  padding-top: 0%;
+  padding-left: 0%;
+}
+
+input[type="text"]{
+  width: 65%;
+  height: 40px;
+  margin-left: 17.5%;
+  border-style: solid;
+  border-color: #000;
+  border-width: 2px;
+  padding-left: 14px;
+  margin-top: 10vh;
+}
+
+input[type="email"]{
+  width: 65%;
+  height: 40px;
+  margin-left: 17.5%;
+  border-style: solid;
+  border-color: #000;
+  border-width: 2px;
+  padding-left: 14px;
+  margin-top: 5vh;
+}
+
+.textarea{
+  width: 65%;
+  height: 160px;
+  margin-left: 17.5%;
+  border-style: solid;
+  border-color: #000;
+  border-width: 2px;
+  padding-left: 14px;
+  margin-top: 5vh;
+
+}
+
+.send-button{
+  width: 65%;
+  position: relative;
+  height: 40px;
+  margin-left: 17.5%;
+  margin-top: 5vh;
+  overflow: hidden;
+}
+
+
+input[type="submit"]{
+  position: absolute;
+  width: 100%;
+  height: 40px;
+  background-color: #FF0065;
+  border: none;
+  font-family: 'Anton', sans-serif;
+  color: #0A0A0B;
+  font-size: 30px;
+}
+
+.send-overlay{
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  height: 0px;
+  overflow: hidden;
+  background-color: #000;
+  font-family: 'Anton', sans-serif;
+  color: #95989A;
+  font-size: 30px;
+}
+
+.contact-card{
+  width: 65%;
+  height: 50vh;
+  margin-left: 17.5%;
+  margin-top: 13vh;
+  background-color: #0A0A0B;
+}
+
+.info1{
+  width: 100%;
+  height: 25%;
+}
+
+.info2{
+  width: 100%;
+  height: 25%;
+  font-family: 'Anton', sans-serif;
+  color: #F0F0F0;
+  font-size: 62px;
+  overflow:hidden;
+}
+
+.info3{
+  width: 100%;
+  height: 25%;
+  font-family: 'Anton', sans-serif;
+  color: #F0F0F0;
+  font-size: 62px;
+  overflow:hidden;
+}
+
+.info4{
+  width: 100%;
+  height: 25%;
+  font-family: 'Anton', sans-serif;
+  color: #F0F0F0;
+  font-size: 62px;
+  overflow:hidden;
+}
 }
 
 @media (max-width: 375px) {
@@ -1116,5 +1488,90 @@ transition-delay: 1.1s;
 margin-left: 100%;
 transition-delay: 1.2s;
 
+}
+
+.contact-form{
+  position: none;
+  margin-left:0%;
+  width: 100%;
+  height: 70vh;
+}
+
+input[type="text"]{
+  width: 78%;
+  height: 40px;
+  margin-left: 11%;
+  border-style: solid;
+  border-color: #000;
+  border-width: 2px;
+  padding-left: 14px;
+  margin-top:8vh;
+}
+
+input[type="email"]{
+  width: 78%;
+  height: 40px;
+  margin-left: 11%;
+  border-style: solid;
+  border-color: #000;
+  border-width: 2px;
+  padding-left: 14px;
+  margin-top: 5vh;
+}
+
+.textarea{
+  width: 78%;
+  height: 160px;
+  margin-left: 11%;
+  border-style: solid;
+  border-color: #000;
+  border-width: 2px;
+  padding-left: 14px;
+  margin-top: 5vh;
+
+}
+
+.contact-card{
+  width: 78%;
+  height: 40vh;
+  margin-left: 11%;
+  margin-top: 13vh;
+  background-color: #0A0A0B;
+}
+
+.info2{
+  width: 100%;
+  height: 25%;
+  font-family: 'Anton', sans-serif;
+  color: #F0F0F0;
+  font-size: 49px;
+  overflow:hidden;
+}
+
+.info3{
+  width: 100%;
+  height: 25%;
+  font-family: 'Anton', sans-serif;
+  color: #F0F0F0;
+  font-size: 49px;
+  overflow:hidden;
+}
+
+.info4{
+  width: 100%;
+  height: 25%;
+  font-family: 'Anton', sans-serif;
+  color: #F0F0F0;
+  font-size: 49px;
+  overflow:hidden;
+}
+
+.send-button{
+  width: 78%;
+  position: relative;
+  height: 40px;
+  margin-left: 11%;
+  margin-top: 5vh;
+  overflow: hidden;
 }
 }
