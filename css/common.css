@@ -3,7 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+a{
+  text-decoration: none;
+}
 #nav-menu{
   cursor: pointer;
 }
@@ -83,6 +85,11 @@
   overflow: ;
 }
 
+.nav1-con .bot a{
+  color: #95989A;
+
+}
+
 .bot{
   color: #95989A;
   padding-top: 28px;
@@ -133,6 +140,11 @@
   width: 100%;
   height: 100%;
   overflow: ;
+}
+
+.nav2-con .bot2 a{
+  color: #95989A;
+
 }
 
 .bot2{
@@ -188,6 +200,11 @@
   overflow: ;
 }
 
+.nav3-con .bot3 a{
+  color: #95989A;
+
+}
+
 .bot3{
   color: #95989A;
   padding-top: 28px;
@@ -240,7 +257,10 @@
   height: 100%;
   overflow: ;
 }
+.nav4-con .bot4 a{
+  color: #95989A;
 
+}
 .bot4{
   color: #95989A;
   padding-top: 28px;
