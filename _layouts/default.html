@@ -2,13 +2,17 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
     <link rel="stylesheet" href="{{site.baseurl}}/css/common.css">
     <title></title>
   </head>
   <body>
     {% include nav.html %}
     {{content}}
-    <script type="text/javascript" srv="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js?ver=1.8.3"></script>
+<script src="http://cdn.liginc.co.jp/demo/2014/09/svg/js/jquery.lazylinepainter-1.4.1.min.js"></script>
+<script src="http://cdn.liginc.co.jp/demo/2014/09/svg/js/raphael-min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
         $('.bot').on('mouseenter', function(){
@@ -131,6 +135,7 @@
     c,b,d){var f=1.70158,e=0,g=b;if(0==a)return c;if(1==(a/=d))return c+b;e||(e=.3*d);g<Math.abs(b)?(g=b,f=e/4):f=e/(2*Math.PI)*Math.asin(b/g);return g*Math.pow(2,-10*a)*Math.sin(2*(a*d-f)*Math.PI/e)+b+c},easeInOutElastic:function(a,c,b,d){var f=1.70158,e=0,g=b;if(0==a)return c;if(2==(a/=d/2))return c+b;e||(e=.3*d*1.5);g<Math.abs(b)?(g=b,f=e/4):f=e/(2*Math.PI)*Math.asin(b/g);return 1>a?-.5*g*Math.pow(2,10*--a)*Math.sin(2*(a*d-f)*Math.PI/e)+c:g*Math.pow(2,-10*--a)*Math.sin(2*(a*d-f)*Math.PI/e)*.5+b+c},
     easeInBack:function(a,c,b,d,f){void 0==f&&(f=1.70158);return b*(a/=d)*a*((f+1)*a-f)+c},easeOutBack:function(a,c,b,d,f){void 0==f&&(f=1.70158);return b*((a=a/d-1)*a*((f+1)*a+f)+1)+c},easeInOutBack:function(a,c,b,d,f){void 0==f&&(f=1.70158);return 1>(a/=d/2)?b/2*a*a*(((f*=1.525)+1)*a-f)+c:b/2*((a-=2)*a*(((f*=1.525)+1)*a+f)+2)+c},easeInBounce:function(a,c,b,d){return b-n.easeOutBounce(d-a,0,b,d)+c},easeOutBounce:function(a,c,b,d){return(a/=d)<1/2.75?7.5625*b*a*a+c:a<2/2.75?b*(7.5625*(a-=1.5/2.75)*a+
     .75)+c:a<2.5/2.75?b*(7.5625*(a-=2.25/2.75)*a+.9375)+c:b*(7.5625*(a-=2.625/2.75)*a+.984375)+c},easeInOutBounce:function(a,c,b,d){return a<d/2?.5*n.easeInBounce(2*a,0,b,d)+c:.5*n.easeOutBounce(2*a-d,0,b,d)+.5*b+c}}})(jQuery);
+
       $(document).ready(function(){
         var pathObj = {
     "nav-menu": {
