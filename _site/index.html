@@ -91,6 +91,12 @@
         $('.nav4-block').on('mouseout', function(){
           $('.nav4-block').removeClass('hover-bot4');
         });
+        $('.send-button').on('mouseover', function(){
+        $('.send-overlay').css({'height':'0px'});
+        });
+        $('.send-button').on('mouseout', function(){
+        $('.send-overlay').css({'height':'40px'});
+        });
       })
     </script>
     <script type="text/javascript">
