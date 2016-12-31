@@ -13,7 +13,7 @@
 <div class="nav">
   <div class="nav1">
     <span class="nav1-block"></span>
-    <span class="nav1-con"><a href="/portfolio/index.html">HOME</a></span>
+    <span class="nav1-con"><h1 class="bot"><a href="/portfolio/index.html">HOME</a></h1></span>
     <span class="nav1-block2"></span>
   </div>
   <div class="nav2">
@@ -35,57 +35,57 @@
 
         my portfolio content
 
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js?ver=1.8.3"></script>
-<script src="http://cdn.liginc.co.jp/demo/2014/09/svg/js/jquery.lazylinepainter-1.4.1.min.js"></script>
-<script src="http://cdn.liginc.co.jp/demo/2014/09/svg/js/raphael-min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js?ver=1.8.3"></script>
+<script src="https://cdn.liginc.co.jp/demo/2014/09/svg/js/jquery.lazylinepainter-1.4.1.min.js"></script>
+<script src="https://cdn.liginc.co.jp/demo/2014/09/svg/js/raphael-min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
-        $('.bot').on('mouseenter', function(){
+        $('.nav1-con').on('mouseover', function(){
           $('.nav1-block').addClass('hover-bot');
         });
         $('.nav1-block').on('mouseenter', function(){
           $('.nav1-block').addClass('hover-bot');
         });
-        $('.bot').on('mouseout', function(){
+        $('.nav1-con').on('mouseout', function(){
           $('.nav1-block').removeClass('hover-bot');
         });
         $('.nav1-block').on('mouseout', function(){
           $('.nav1-block').removeClass('hover-bot');
         });
 
-        $('.bot2').on('mouseenter', function(){
+        $('.nav2-con').on('mouseover', function(){
           $('.nav2-block').addClass('hover-bot2');
         });
         $('.nav2-block').on('mouseenter', function(){
           $('.nav2-block').addClass('hover-bot2');
         });
-        $('.bot2').on('mouseout', function(){
+        $('.nav2-con').on('mouseout', function(){
           $('.nav2-block').removeClass('hover-bot2');
         });
         $('.nav2-block').on('mouseout', function(){
           $('.nav2-block').removeClass('hover-bot2');
         });
 
-        $('.bot3').on('mouseenter', function(){
+        $('.nav3-con').on('mouseover', function(){
           $('.nav3-block').addClass('hover-bot');
         });
         $('.nav3-block').on('mouseenter', function(){
           $('.nav3-block').addClass('hover-bot');
         });
-        $('.bot3').on('mouseout', function(){
+        $('.nav3-con').on('mouseout', function(){
           $('.nav3-block').removeClass('hover-bot');
         });
         $('.nav3-block').on('mouseout', function(){
           $('.nav3-block').removeClass('hover-bot');
         });
 
-        $('.bot4').on('mouseenter', function(){
+        $('.nav4-con').on('mouseover', function(){
           $('.nav4-block').addClass('hover-bot4');
         });
         $('.nav4-block').on('mouseenter', function(){
           $('.nav4-block').addClass('hover-bot4');
         });
-        $('.bot4').on('mouseout', function(){
+        $('.nav4-con').on('mouseout', function(){
           $('.nav4-block').removeClass('hover-bot4');
         });
         $('.nav4-block').on('mouseout', function(){
