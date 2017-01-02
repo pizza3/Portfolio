@@ -35,7 +35,7 @@ margin-top: 17vh;
 
 #nav-menu{
   position: fixed;
-  z-index: 20;
+  z-index: 90;
   width: 50px;
   height: 50px;
   margin-top: 48vh;
@@ -43,7 +43,7 @@ margin-top: 17vh;
 }
 
 #close-menu{
-  z-index: 20;
+  z-index: 90;
   position: fixed;
   width: 50px;
   height: 50px;
@@ -456,6 +456,69 @@ input[type="submit"]{
   overflow:hidden;
 }
 
+#sketch-holder{
+  width: 100%;
+  position: fixed;
+  height: 100vh;
+  z-index: -1;
+}
+
+.abt1{
+  filter:  url('#blurMe');
+  position: absolute;
+  width: 8%;
+  height: 8vh;
+  background-color: #FF0065;
+  z-index: -1;
+}
+
+.about-header{
+  text-align: center;
+  width: 100%;
+  height: 18vh;
+  position: relative;
+  font-size: 73px;
+  font-family: 'Anton', sans-serif;
+  color: #0A0A0B;
+}
+
+
+
+.about1{
+  width: 100%;
+  height: 70vh;
+  float: left;
+  padding-top: 20vh;
+  text-align: center;
+  font-size: 66px;
+  font-family: 'Anton', sans-serif;
+  font-weight: lighter;
+}
+
+.about2{
+  width: 100%;
+  height: 70vh;
+  padding-top: 20vh;
+
+  float: left;
+  text-align: center;
+  font-size: 66px;
+  font-family: 'Anton', sans-serif;
+  font-weight: lighter;
+}
+
+.about3{
+  width: 100%;
+  height: 70vh;
+  padding-top: 20vh;
+
+  float: left;
+  text-align: center;
+  font-size: 66px;
+  font-family: 'Anton', sans-serif;
+  font-weight: lighter;
+
+}
 @media (max-width: 1024px) {
   #header{
     position: absolute;
@@ -869,6 +932,48 @@ margin-left: 100%;
 transition-delay: 1.2s;
 
 }
+.about-header{
+  text-align: center;
+  width: 100%;
+  height: 18vh;
+  position: relative;
+  font-size: 73px;
+  font-family: 'Anton', sans-serif;
+  color: #0A0A0B;
+}
+
+
+
+.about1{
+  width: 100%;
+  height: 70vh;
+  float: left;
+  text-align: center;
+  font-size: 66px;
+  font-family: 'Anton', sans-serif;
+  font-weight: lighter;
+}
+
+.about2{
+  width: 100%;
+  height: 70vh;
+  float: left;
+  text-align: center;
+  font-size: 66px;
+  font-family: 'Anton', sans-serif;
+  font-weight: lighter;
+}
+
+.about3{
+  width: 100%;
+  height: 70vh;
+  float: left;
+  text-align: center;
+  font-size: 66px;
+  font-family: 'Anton', sans-serif;
+  font-weight: lighter;
+
+}
 }
 @media (max-width: 768px) {
 
@@ -1279,6 +1384,49 @@ input[type="submit"]{
   font-size: 62px;
   overflow:hidden;
 }
+
+.about-header{
+  text-align: center;
+  width: 100%;
+  height: 18vh;
+  position: relative;
+  font-size: 73px;
+  font-family: 'Anton', sans-serif;
+  color: #0A0A0B;
+}
+
+
+
+.about1{
+  width: 100%;
+  height: 70vh;
+  float: left;
+  text-align: center;
+  font-size: 47px;
+  font-family: 'Anton', sans-serif;
+  font-weight: lighter;
+}
+
+.about2{
+  width: 100%;
+  height: 70vh;
+  float: left;
+  text-align: center;
+  font-size: 47px;
+  font-family: 'Anton', sans-serif;
+  font-weight: lighter;
+}
+
+.about3{
+  width: 100%;
+  height: 70vh;
+  float: left;
+  text-align: center;
+  font-size: 47px;
+  font-family: 'Anton', sans-serif;
+  font-weight: lighter;
+
+}
 }
 
 @media (max-width: 375px) {
@@ -1514,7 +1662,7 @@ z-index: 20;
 
 .nav4-block2{
 margin-left: 0%;
-background-color: #0a0a0b;
+background-color: #000;
 position: absolute;
 color: #000;
 float: left;
@@ -1647,5 +1795,49 @@ input[type="email"]{
   margin-left: 11%;
   margin-top: 5vh;
   overflow: hidden;
+}
+.about-header{
+  text-align: center;
+  width: 100%;
+  height: 18vh;
+  position: relative;
+  font-size: 73px;
+  font-family: 'Anton', sans-serif;
+  color: #0A0A0B;
+}
+
+
+.about1{
+  width: 100%;
+  height: 70vh;
+  float: left;
+  text-align: center;
+  font-size: 37px;
+  font-family: 'Anton', sans-serif;
+  font-weight: lighter;
+  overflow: hidden;
+}
+
+.about2{
+  width: 100%;
+  height: 70vh;
+  float: left;
+  text-align: center;
+  font-size: 37px;
+  font-family: 'Anton', sans-serif;
+  font-weight: lighter;
+  overflow: hidden;
+}
+
+.about3{
+  width: 100%;
+  height: 70vh;
+  float: left;
+  text-align: center;
+  font-size: 37px;
+  font-family: 'Anton', sans-serif;
+  font-weight: lighter;
+  overflow: hidden;
+
 }
 }
