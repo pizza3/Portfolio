@@ -535,52 +535,6 @@ $('#header2').lazylinepainter(
 }).lazylinepainter('paint');
 });
     </script>
-    <script type="text/javascript">
-    var angle=0.0;
-    var speed =0.009;
-    var abt;
-    $(document).on('scroll', function(){
-     abt = $(document).scrollTop();
-});
-    var angle=0.0;
-    var speed =0.009;
-      function setup() {
-        var canvas=createCanvas(windowWidth,windowHeight);
-        canvas.parent('sketch-holder');
-        noFill();
-      }
-
-      function draw() {
-        background(255);
-        var l0=map(abt/4,0,width,10,300);
-        var l1=map(abt/4,0,height,10,300);
-        blendMode(REPLACE);
-        translate(width/2,height/2);
-        rotate(angle);
-        for(var i=0;i<6;i++){
-          push();
-        //  fill(200,200,20,100)
-          rotate(i*TWO_PI/6);
-          translate(0,l0);
-          stroke(200,2,200);
-          ellipse(0,0,380,380)
-          rotate(angle)
-          for(var j=0;j<6;j++){
-            push();
-            //fill(255,20,20,100);
-            rotate(j*TWO_PI/6);
-            translate(0,l1);
-            stroke(255,0,101);
-            ellipse(0,0,380,380);
-            pop();
-          }
-
-          pop();
-        }
-
-        angle+=speed;
-      }
-
-    </script>
+  
   </body>
 </html>
