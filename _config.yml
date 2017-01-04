@@ -1,3 +1,5 @@
 markdown: redcarpet
 exclude: ['README.md']
 permalink: pretty
+baseurl: "/portfolio"
+url: http://yugamdhuriya.com
