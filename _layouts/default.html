@@ -14,12 +14,13 @@
   </head>
   <body>
     {% include nav.html %}
+    {% include line.html %}
     {{content}}
     <script type="text/javascript">
       $(document).ready(function(){
         $('.line1').animate({ height: '100vh'}, 1400, 'linear');
         $('.line2').animate({ width: '100%'}, 1400, 'linear');
-        
+
         $('.nav1-con').on('mouseover', function(){
           $('.nav1-block').addClass('hover-bot');
         });
