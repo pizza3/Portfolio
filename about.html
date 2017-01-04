@@ -17,7 +17,6 @@ layout: default
   <span>CURRENTLY IN COLLEGE</span><br>
   <span>AVAILABLE*</span>
 </div>
-
 <script type="text/javascript">
   var angle=0.0;
   var speed =0.009;
@@ -35,29 +34,31 @@ var speed =0.009;
   }
 
   function draw() {
+    noStroke();
     background(255);
-    var l0=map(abt/4,0,width,10,300);
-    var l1=map(abt/4,0,height,10,300);
+    var l0=map(abt/3,0,width,10,300);
+    var l1=map(abt/3,0,height,10,300);
     blendMode(REPLACE);
     translate(width/2,height/2);
     rotate(angle);
     for(var i=0;i<6;i++){
       push();
-    //  fill(200,200,20,100)
+    fill(200,200,20,10)
       rotate(i*TWO_PI/6);
       translate(0,l0);
-      stroke(200,2,200);
-      ellipse(0,0,380,380)
+  //    stroke(200,20,20);
+      ellipse(0,0,300-abt/40,300-abt/40)
       rotate(angle)
       for(var j=0;j<6;j++){
         push();
-        //fill(255,20,20,100);
+        fill(255,20,20,10);
         rotate(j*TWO_PI/6);
         translate(0,l1);
-        stroke(255,0,101);
-        ellipse(0,0,380,380);
+  //      stroke(255,0,101);
+        ellipse(0,0,300 + abt/2,300+abt/2);
         pop();
       }
+
 
       pop();
     }
