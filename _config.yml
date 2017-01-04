@@ -1,3 +1,4 @@
 markdown: redcarpet
 baseurl: /portfolio
 exclude: ['README.md']
+permalink: pretty
