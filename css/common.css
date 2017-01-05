@@ -9,6 +9,51 @@ a{
   text-decoration: none;
 }
 
+.footer{
+  position: fixed;
+  top: 90vh;
+  left: 15%;
+  width: 75%;
+  height: 10vh;
+  z-index: 40;
+  border-style: solid;
+  border-color: #000;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+  border-width: thin;
+  text-align: center;
+}
+.link1{
+  margin-left: 30%;
+}
+.link1,.link2,.link3,.link4{
+  float: left;
+  width: 10%;
+  height: 100%;
+  padding-top: 1.5%;
+}
+
+#Capa_1,#Capa_2,#Capa_3,#Capa_4{
+  width: 30px;
+  height: 30px;
+  transition: .5s;
+  cursor: pointer;
+}
+
+#Capa_1:hover{
+  fill:#ff0065;
+}
+#Capa_2:hover{
+  fill:#ff0065;
+}
+#Capa_3:hover{
+  fill:#00ff83;
+}
+#Capa_4:hover{
+  fill:#00ff83;
+}
+
 #header{
   position: absolute;
 width: 30%;
