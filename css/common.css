@@ -563,7 +563,7 @@ input[type="submit"]{
   position: fixed;
   width:1%;
   height: 0vh;
-  margin-left: 5%;
+  margin-left: 80px;
   border-style: solid;
   border-width: thin;
   border-color: #95989A;
@@ -1047,7 +1047,7 @@ transition-delay: 1.2s;
   position: fixed;
   width:1%;
   height: 0vh;
-  margin-left: 7%;
+  margin-left: 80px;
   border-style: solid;
   border-width: thin;
   border-color: #95989A;
