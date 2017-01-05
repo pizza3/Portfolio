@@ -33,6 +33,7 @@ a{
   height: 30px;
   transition: .5s;
   cursor: pointer;
+  fill:#C9CBCE;
 }
 
 #Capa_1:hover{
