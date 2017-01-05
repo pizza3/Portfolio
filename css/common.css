@@ -16,12 +16,6 @@ a{
   width: 75%;
   height: 10vh;
   z-index: 60;
-  border-style: solid;
-  border-color: #000;
-  border-bottom: none;
-  border-left: none;
-  border-right: none;
-  border-width: thin;
   text-align: center;
 }
 .link1{
