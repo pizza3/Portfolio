@@ -11,17 +11,18 @@
     <script src="https://cdn.liginc.co.jp/demo/2014/09/svg/js/raphael-min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.5/p5.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.5/addons/p5.dom.min.js"></script>
+
   </head>
   <body>
     {% include nav.html %}
     {% include line.html %}
     {% include footer.html %}
+
     {{content}}
     <script type="text/javascript">
-      $(document).ready(function(){
-        $('.line1').animate({ height: '100vh'}, 1400, 'linear');
-        $('.line2').animate({ width: '100%'}, 1400, 'linear');
-
+      //  $('.line1').animate({ height: '100vh'}, 1400, 'linear');
+      //  $('.line2').animate({ width: '100%'}, 1400, 'linear');
+        // $('.line1').addClass('line');
         $('.nav1-con').on('mouseover', function(){
           $('.nav1-block').addClass('hover-bot');
         });
@@ -79,7 +80,6 @@
         $('.send-button').on('mouseout', function(){
         $('.send-overlay').css({'height':'40px'});
         });
-      })
     </script>
     <script type="text/javascript">
     /*
@@ -223,7 +223,7 @@
     'ease': 'easeInOutExpo'
   }).lazylinepainter('paint');
   $('#nav-menu').css({'z-index':'89'});
-  $('#close-menu').css({'z-index':'91'});
+  $('#close-menu').css({'z-index':'90'});
   $('.nav').css({'width':'100%'});
   $('.nav1-block2').addClass('nav-click-block2');
   $('.nav2-block2').addClass('nav2-click-block2');
@@ -238,6 +238,10 @@
      'ease': 'easeInOutExpo'
   }).lazylinepainter('erase');
   });
+
+
+
+
   $('#close-menu').on('click',function(){
   $('#nav-menu').lazylinepainter(
   {
@@ -254,7 +258,7 @@
    "strokeColor": "#FFFFFF",
    'ease': 'easeInOutExpo'
   }).lazylinepainter('erase');
-  $('#nav-menu').css({'z-index':'91'});
+  $('#nav-menu').css({'z-index':'90'});
   $('#close-menu').css({'z-index':'89'});
   $('.nav').css({'width':'0%'});
   $('.nav1-block2').removeClass('nav-click-block2');

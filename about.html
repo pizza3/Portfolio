@@ -19,14 +19,14 @@ layout: default
 </div>
 <script type="text/javascript">
   var angle=0.0;
-  var speed =0.009;
+  var speed =0.03;
   var abt;
 $(document).on('scroll', function(){
  abt = $(document).scrollTop();
 });
 
 var angle=0.0;
-var speed =0.009;
+var speed =0.006;
   function setup() {
     var canvas=createCanvas(windowWidth,windowHeight+200);
     canvas.parent('sketch-holder');
@@ -39,11 +39,12 @@ var speed =0.009;
     var l0=map(abt,0,width,10,300);
     var l1=map(abt/3,0,height,10,300);
   //  blendMode(REPLACE);
+
     translate((width/2),(height/2)-100);
     rotate(angle);
     for(var i=0;i<6;i++){
       push();
-    //fill(200,200,20,10)
+  //  fill(200,20,20,10)
       rotate(i*TWO_PI/6);
       translate(0,l0);
       stroke(200,20,10);
