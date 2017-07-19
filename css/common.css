@@ -1972,9 +1972,15 @@ input[type="email"]{
 }
 
 .work12{
-  margin-left :auto;
-  margin-right:auto;
-  margin-top: 30vh;
-  font-family: 'Anton', sans-serif;
-  font-weight: lighter;
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+    margin-left: 20%;
+    margin-right: auto;
+    width: 60%;
+    text-align: center;
+    margin-top: 19vh;
+    font-family: 'Anton', sans-serif;
+    font-weight: lighter;
 }
